@@ -3,7 +3,7 @@ class Trie(object):
         """
         Initialize your data structure here.
         """
-        self.root = {}
+        self.root = {'#': False}
 
     def insert(self, word):
         """
@@ -14,7 +14,7 @@ class Trie(object):
         node = self.root
         for c in word:
             if c not in node:
-                node[c] = {}
+                node[c] = {'#': False}
             node = node[c]
         node['#'] = True
 
@@ -29,7 +29,7 @@ class Trie(object):
             if c not in node:
                 return False
             node = node[c]
-        return '#' in node and node['#']
+        return node['#']
 
     def startsWith(self, prefix):
         """
