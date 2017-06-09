@@ -14,7 +14,7 @@ class Solution(object):
         :type wordDict: Set[str]
         :rtype: bool
         """
-        # dp[i] = True, if s[j:i] in words and dp[i] = True
+        # dp[i] = True, if s[j:i] in words and dp[j] = True
         dp = [False for i in range(len(s) + 1)]
         dp[0] = True
         i = 1
